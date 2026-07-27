@@ -1,0 +1,6 @@
+# Real SMTP credentials — never commit. Copy config.example.php → config.php on the server.
+config.php
+
+# OS noise
+.DS_Store
+Thumbs.db

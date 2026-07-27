@@ -3,21 +3,134 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MOT Luton | Same Day MOT – Book Now | Arundel Rd MOT Centre</title>
-  <meta name="description" content="DVSA Approved MOT Centre in Luton. Same day MOT testing, fast turnaround 30-60 mins, affordable prices. Book online or call 07570 793698. Serving Luton & nearby areas." />
-  <meta name="keywords" content="MOT Luton, MOT near me, car MOT Luton, same day MOT Luton, cheap MOT Luton, MOT test Luton, DVSA approved MOT" />
+  <title>MOT Luton | Same Day MOT &amp; Air Con Re-gas – Book Now | Arundel Rd</title>
+  <meta name="description" content="DVSA Approved MOT Centre in Luton. Same day MOT testing (30–60 min turnaround) and car air con re-gas from £49. Book online or call 07570 793698. Serving Luton & nearby areas." />
+  <meta name="keywords" content="MOT Luton, MOT near me, car MOT Luton, same day MOT Luton, cheap MOT Luton, MOT test Luton, DVSA approved MOT, air con regas Luton, car air conditioning Luton" />
   <meta name="robots" content="index, follow" />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Same Day MOT in Luton – Book Now" />
-  <meta property="og:description" content="DVSA Approved MOT Centre in Luton. Fast, affordable, trusted MOT service." />
-  <meta property="og:type" content="website" />
+  <!-- TODO: replace https://REPLACE-WITH-DOMAIN.co.uk with the real domain (also in og:url / og:image below and in the JSON-LD "url") -->
+  <link rel="canonical" href="https://REPLACE-WITH-DOMAIN.co.uk/" />
 
+  <!-- Open Graph -->
+  <meta property="og:title" content="Same Day MOT &amp; Air Con Re-gas in Luton – Book Now" />
+  <meta property="og:description" content="DVSA Approved MOT Centre in Luton. Fast, affordable, trusted MOT & air con service." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://REPLACE-WITH-DOMAIN.co.uk/" />
+  <meta property="og:image" content="https://REPLACE-WITH-DOMAIN.co.uk/hero-bg.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Performance: preload the LCP hero image, preconnect to third-party origins -->
+  <link rel="preload" as="image" href="hero-bg.png" fetchpriority="high" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://www.googletagmanager.com" />
+
+  <!-- Fonts load non-blocking (media swap); noscript fallback keeps them working without JS -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" /></noscript>
 
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Google Ads tag (gtag.js) — TODO: replace AW-REPLACE_ME with your real Google Ads conversion ID
+       (Google Ads → Tools → Conversions → your conversion → "Use Google tag").
+       Conversion labels for form/call events are set in script.js — search for AW-REPLACE_ME there too. -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-REPLACE_ME"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'AW-REPLACE_ME');
+  </script>
+
+  <!-- Local SEO structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutoRepair",
+    "name": "Luton MOT Centre",
+    "url": "https://REPLACE-WITH-DOMAIN.co.uk/",
+    "image": "https://REPLACE-WITH-DOMAIN.co.uk/hero-bg.png",
+    "telephone": "+447570793698",
+    "priceRange": "££",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Arundel Rd, Maidenhall",
+      "addressLocality": "Luton",
+      "postalCode": "LU4 8DY",
+      "addressCountry": "GB"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 51.8780,
+      "longitude": -0.4505
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "08:00",
+        "closes": "18:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "08:00",
+        "closes": "16:00"
+      }
+    ],
+    "areaServed": [
+      { "@type": "City", "name": "Luton" },
+      { "@type": "City", "name": "Dunstable" },
+      { "@type": "City", "name": "Harpenden" },
+      { "@type": "City", "name": "Leagrave" }
+    ]
+  }
+  </script>
+  <!-- FAQ structured data — KEEP IN SYNC with the on-page FAQ section -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How long does an MOT take?",
+        "acceptedAnswer": { "@type": "Answer", "text": "A standard MOT test takes between 30 and 60 minutes. You're welcome to wait in our comfortable waiting area while your car is tested." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I wait while my car is being tested?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes! We have a warm, comfortable waiting area with seating. You're welcome to stay on-site while your vehicle is tested." }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens if my car fails its MOT?",
+        "acceptedAnswer": { "@type": "Answer", "text": "If your car fails, we'll give you a clear written report of what needs to be fixed. We can carry out most repairs on-site. If we do the repairs, you get a free re-test within 10 working days." }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need to book in advance?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Booking is recommended to guarantee your slot, especially for same-day appointments. Use our booking form or call us on 07570 793698 to check availability." }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does an MOT cost?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Our MOT tests start from just £29 for Class 4 vehicles (cars and smaller vans). We never charge more than the DVSA maximum fee. Call us for a quote." }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does an air con re-gas take?",
+        "acceptedAnswer": { "@type": "Answer", "text": "A full air conditioning re-gas takes approximately 45–60 minutes, including a system check for leaks. You're welcome to wait while we do it." }
+      },
+      {
+        "@type": "Question",
+        "name": "Which gas does my car need?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Cars made before 2017 typically use R134a refrigerant, while newer cars use R1234yf. We check your vehicle and always use the correct gas for your system." }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -91,7 +204,8 @@
   <section class="stats-bar reveal">
     <div class="container stats-grid">
       <div class="stat-item">
-        <div class="stat-number" data-target="500">0</div>
+        <!-- Real number lives in the markup as no-JS fallback; JS animates 0 → this value on scroll -->
+        <div class="stat-number" data-target="500">500+</div>
         <div class="stat-label">MOTs Completed</div>
       </div>
       <div class="stat-item">
@@ -117,7 +231,7 @@
       <div class="section-header reveal">
         <span class="section-label">What We Offer</span>
         <h2 class="section-title">Our <span class="text-accent">Services</span></h2>
-        <p class="section-sub">Everything your vehicle needs under one roof</p>
+        <p class="section-sub">MOT testing, repairs and car air con re-gas in Luton — everything your vehicle needs under one roof</p>
       </div>
 
       <div class="services-grid">
@@ -126,7 +240,7 @@
           <h3>MOT Testing</h3>
           <p>Full Class 4 &amp; Class 7 MOT testing by qualified DVSA-approved testers. Official certificate issued on the spot.</p>
           <div class="service-price">From <strong>£29</strong></div>
-          <a href="#booking" class="service-book-btn">Book This →</a>
+          <a href="#booking" class="service-book-btn" data-service="MOT Test">Book This →</a>
         </div>
         <div class="service-card service-card--featured reveal">
           <div class="service-badge-top">Most Popular</div>
@@ -134,14 +248,23 @@
           <h3>Same Day MOT</h3>
           <p>Booked in this morning? On the road by afternoon. We prioritise same-day appointments — just call ahead.</p>
           <div class="service-price">Available <strong>Daily</strong></div>
-          <a href="#booking" class="service-book-btn">Book This →</a>
+          <a href="#booking" class="service-book-btn" data-service="Same Day MOT">Book This →</a>
         </div>
         <div class="service-card reveal">
           <div class="service-icon">🔧</div>
           <h3>Quick Repairs</h3>
           <p>Failed your MOT elsewhere? We carry out advisory and failure repairs quickly so you can re-test the same day.</p>
           <div class="service-price">Free <strong>Quote</strong></div>
-          <a href="#booking" class="service-book-btn">Book This →</a>
+          <a href="#booking" class="service-book-btn" data-service="Repairs">Book This →</a>
+        </div>
+        <!-- #aircon anchor: Google Ads "air con regas Luton" ad group deep-links here -->
+        <div class="service-card reveal" id="aircon">
+          <div class="service-icon">❄️</div>
+          <h3>Air Con Re-gas &amp; Repair</h3>
+          <p>Car AC blowing warm? Full air conditioning re-gas (R134a &amp; R1234yf), leak checks and repairs. Beat the heat.</p>
+          <!-- TODO: confirm the Air Con re-gas price with the garage before ads go live -->
+          <div class="service-price">From <strong>£49</strong></div>
+          <a href="#booking" class="service-book-btn" data-service="Air Con Re-gas">Book This →</a>
         </div>
       </div>
     </div>
@@ -194,6 +317,9 @@
   <!-- ══════════════════════════════════════════════
        TESTIMONIALS
   ══════════════════════════════════════════════ -->
+  <!-- ⚠️ COMPLIANCE TODO: The testimonials below are placeholder copy. They MUST be replaced with
+       genuine customer reviews (e.g. copied verbatim from the garage's Google Business Profile, with
+       permission) BEFORE Google Ads go live. Fabricated reviews are an ASA/CMA (UK consumer law) risk. -->
   <section class="section" id="reviews">
     <div class="container">
       <div class="section-header reveal">
@@ -270,7 +396,23 @@
           <div class="urgency-mini">
             <span class="urgency-dot"></span> Limited slots today – book now to secure yours
           </div>
-          <form id="bookingForm" novalidate>
+          <form id="bookingForm" method="post" action="book.php" novalidate>
+            <!-- Honeypot: hidden from humans, bots fill it in. Server rejects if non-empty. -->
+            <div class="hp-field" aria-hidden="true">
+              <label for="website">Website</label>
+              <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+            </div>
+            <div class="form-group">
+              <label for="service">Service *</label>
+              <select id="service" name="service" required>
+                <option value="">Select a service…</option>
+                <option value="MOT Test">MOT Test</option>
+                <option value="Same Day MOT">Same Day MOT</option>
+                <option value="Air Con Re-gas">Air Con Re-gas</option>
+                <option value="Repairs">Repairs</option>
+              </select>
+              <span class="form-error" id="err-service"></span>
+            </div>
             <div class="form-group">
               <label for="fullName">Full Name *</label>
               <input type="text" id="fullName" name="fullName" placeholder="Your full name" required />
@@ -322,7 +464,11 @@
             <button type="submit" class="btn-primary btn-full pulse-btn" id="submit-btn">
               📅 Book My MOT Now
             </button>
+            <div class="form-fatal" id="formFatal" role="alert" hidden>
+              ⚠️ Something went wrong — please call <a href="tel:07570793698"><strong>07570 793698</strong></a> and we'll book you in right away.
+            </div>
             <p class="form-note">We'll confirm your booking within 1 hour by phone.</p>
+            <p class="form-note form-note--privacy">🔒 We only use your details to confirm your booking. <a href="#privacy">Privacy Policy</a></p>
           </form>
           <!-- Success message -->
           <div class="booking-success" id="bookingSuccess">
@@ -374,11 +520,14 @@
           </a>
         </div>
         <div class="map-wrapper reveal">
+          <!-- TODO: open the site once deployed and confirm the map pin sits on Arundel Rd, LU4 8DY.
+               This query-based embed lets Google geocode the address (the old URL had hand-built
+               placeholder coordinates). -->
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2467.9832001!2d-0.450500!3d51.878000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48763fe57fe6d8b7%3A0x0!2sArundel+Rd%2C+Luton+LU4+8DY!5e0!3m2!1sen!2suk!4v1690000000000!5m2!1sen!2suk"
-            width="100%"
+            src="https://www.google.com/maps?q=Arundel%20Road%2C%20Maidenhall%2C%20Luton%20LU4%208DY%2C%20UK&output=embed"
+            width="600"
             height="380"
-            style="border:0;border-radius:16px;"
+            style="border:0;border-radius:16px;width:100%;"
             allowfullscreen=""
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
@@ -444,6 +593,25 @@
             <p>Our MOT tests start from just £29 for Class 4 vehicles (cars and smaller vans). We never charge more than the DVSA maximum fee. Call us for a quote.</p>
           </div>
         </div>
+        <!-- If you edit FAQ copy, also update the FAQPage JSON-LD in <head> -->
+        <div class="faq-item reveal">
+          <button class="faq-question" aria-expanded="false">
+            <span>How long does an air con re-gas take?</span>
+            <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-answer">
+            <p>A full air conditioning re-gas takes approximately 45–60 minutes, including a system check for leaks. You're welcome to wait while we do it.</p>
+          </div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-question" aria-expanded="false">
+            <span>Which gas does my car need?</span>
+            <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-answer">
+            <p>Cars made before 2017 typically use R134a refrigerant, while newer cars use R1234yf. We check your vehicle and always use the correct gas for your system.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -458,6 +626,24 @@
       <div class="hero-ctas" style="justify-content:center;margin-top:2rem">
         <a href="#booking" class="btn-primary pulse-btn" id="final-book-btn">📅 Book MOT Now</a>
         <a href="tel:07570793698" class="btn-call" id="final-call-btn">📞 07570 793698</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       PRIVACY POLICY (required for Google Ads)
+  ══════════════════════════════════════════════ -->
+  <section class="section privacy-section" id="privacy">
+    <div class="container privacy-container">
+      <div class="section-header reveal">
+        <span class="section-label">Your Data</span>
+        <h2 class="section-title">Privacy <span class="text-accent">Policy</span></h2>
+      </div>
+      <div class="privacy-content reveal">
+        <p><strong>What we collect.</strong> When you use our booking form we collect your name, phone number, vehicle registration, vehicle make/model and your preferred appointment details, plus any notes you add.</p>
+        <p><strong>How we use it.</strong> We use these details only to confirm and manage your booking and to contact you about your vehicle. We do not sell your details or share them with third parties for marketing.</p>
+        <p><strong>Advertising cookies.</strong> This site uses Google tags to measure how our online adverts perform (for example, whether a visit from an ad led to a booking or a phone call). See Google's privacy policy for how Google processes this data.</p>
+        <p><strong>Retention &amp; your rights.</strong> Booking details are kept only as long as needed to provide our service. You can ask us to see or delete the details we hold about you at any time — call <a href="tel:07570793698">07570 793698</a>.</p>
       </div>
     </div>
   </section>
@@ -479,6 +665,7 @@
         <a href="#reviews">Reviews</a>
         <a href="#booking">Book Now</a>
         <a href="#faq">FAQs</a>
+        <a href="#privacy">Privacy Policy</a>
       </div>
       <div class="footer-contact">
         <h4>Contact Us</h4>
@@ -501,6 +688,6 @@
     <a href="tel:07570793698" class="sticky-call" id="sticky-call-btn">📞 Call Now</a>
   </div>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>

@@ -7,6 +7,7 @@
   <meta name="description" content="DVSA Approved MOT Centre in Luton. Same day MOT testing (30–60 min turnaround) and car air con re-gas from £49. Book online or call 07570 793698. Serving Luton & nearby areas." />
   <meta name="keywords" content="MOT Luton, MOT near me, car MOT Luton, same day MOT Luton, cheap MOT Luton, MOT test Luton, DVSA approved MOT, air con regas Luton, car air conditioning Luton" />
   <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0F172A" />
 
   <!-- TODO: replace https://REPLACE-WITH-DOMAIN.co.uk with the real domain (also in og:url / og:image below and in the JSON-LD "url") -->
   <link rel="canonical" href="https://REPLACE-WITH-DOMAIN.co.uk/" />
@@ -26,9 +27,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://www.googletagmanager.com" />
 
-  <!-- Fonts load non-blocking (media swap); noscript fallback keeps them working without JS -->
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" /></noscript>
+  <!-- Fonts: Barlow superfamily, display=swap, only the weights in use.
+       Loads non-blocking (media swap); noscript fallback keeps them working without JS -->
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;600&display=swap" rel="stylesheet" /></noscript>
 
   <link rel="stylesheet" href="styles.css" />
 
@@ -134,18 +136,30 @@
 </head>
 <body>
 
+  <!-- Shared SVG defs (star) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-star" viewBox="0 0 24 24">
+      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+    </symbol>
+  </svg>
+
+  <!-- Hazard chevron: use 1 of 3 — top-of-page strip -->
+  <div class="chevron-topbar" aria-hidden="true"></div>
+
   <!-- ══════════════════════════════════════════════
        STICKY NAV
   ══════════════════════════════════════════════ -->
   <nav class="navbar" id="navbar">
     <div class="nav-container">
       <div class="nav-logo">
-        <span class="logo-icon">⚙</span>
+        <span class="logo-icon" aria-hidden="true">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        </span>
         <span class="logo-text">Luton MOT <span class="logo-accent">Centre</span></span>
       </div>
       <div class="nav-phone">
         <a href="tel:07570793698" class="nav-call-btn" id="nav-call-btn">
-          <span class="call-icon">📞</span>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           <span>07570 793698</span>
         </a>
       </div>
@@ -156,43 +170,46 @@
        HERO SECTION
   ══════════════════════════════════════════════ -->
   <section class="hero" id="hero">
-    <div class="hero-overlay"></div>
     <div class="hero-content">
-      <div class="hero-badge animate-fade-up" style="animation-delay:0.1s">
-        <span class="badge-dot"></span> DVSA Approved MOT Centre · Luton
-      </div>
-      <h1 class="hero-title animate-fade-up" style="animation-delay:0.2s">
-        Same Day MOT<br/>in <span class="text-accent">Luton</span> –<br/>Book Now
-      </h1>
-      <p class="hero-sub animate-fade-up" style="animation-delay:0.35s">
-        Fast, Affordable &amp; Trusted MOT Service Near You.<br/>30–60 min turnaround. No hidden fees.
-      </p>
-
-      <!-- Urgency bar -->
-      <div class="urgency-bar animate-fade-up" style="animation-delay:0.45s">
-        <span class="urgency-dot"></span>
-        <strong>Limited slots available today</strong> — Don't miss your spot!
-      </div>
-
-      <div class="hero-ctas animate-fade-up" style="animation-delay:0.55s">
-        <a href="#booking" class="btn-primary pulse-btn" id="hero-book-btn">
-          📅 Book MOT Now
-        </a>
-        <a href="tel:07570793698" class="btn-call" id="hero-call-btn">
-          📞 Call Now
-        </a>
-      </div>
-
-      <!-- Trust row -->
-      <div class="trust-row animate-fade-up" style="animation-delay:0.7s">
-        <div class="trust-item">
-          <span class="trust-check">✔</span> DVSA Approved
+      <div class="hero-inner">
+        <div class="hero-badge">
+          <span class="badge-dot"></span> DVSA Approved MOT Centre · Luton
         </div>
-        <div class="trust-item">
-          <span class="trust-check">✔</span> 100+ Happy Customers
+        <h1 class="hero-title animate-fade-up" style="animation-delay:0s">
+          <span class="text-accent">Same Day</span> MOT<br/>in Luton – Book Now
+        </h1>
+        <p class="hero-sub animate-fade-up" style="animation-delay:0.08s">
+          Fast, Affordable &amp; Trusted MOT Service Near You.<br/>30–60 min turnaround. No hidden fees.
+        </p>
+
+        <!-- Urgency bar -->
+        <div class="urgency-bar">
+          <span class="urgency-dot"></span>
+          <strong>Limited slots available today</strong> — Don't miss your spot!
         </div>
-        <div class="trust-item">
-          <span class="trust-check">✔</span> Same Day Available
+
+        <div class="hero-ctas animate-fade-up" style="animation-delay:0.16s">
+          <a href="#booking" class="btn-primary" id="hero-book-btn">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Book MOT Now
+          </a>
+          <a href="tel:07570793698" class="btn-call" id="hero-call-btn">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Call Now
+          </a>
+        </div>
+
+        <!-- Trust row -->
+        <div class="trust-row">
+          <div class="trust-item">
+            <span class="trust-check" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span> DVSA Approved
+          </div>
+          <div class="trust-item">
+            <span class="trust-check" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span> 100+ Happy Customers
+          </div>
+          <div class="trust-item">
+            <span class="trust-check" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span> Same Day Available
+          </div>
         </div>
       </div>
     </div>
@@ -201,7 +218,7 @@
   <!-- ══════════════════════════════════════════════
        STATS BAR
   ══════════════════════════════════════════════ -->
-  <section class="stats-bar reveal">
+  <section class="stats-bar">
     <div class="container stats-grid">
       <div class="stat-item">
         <!-- Real number lives in the markup as no-JS fallback; JS animates 0 → this value on scroll -->
@@ -226,9 +243,9 @@
   <!-- ══════════════════════════════════════════════
        SERVICES
   ══════════════════════════════════════════════ -->
-  <section class="section" id="services">
+  <section class="section section--alt" id="services">
     <div class="container">
-      <div class="section-header reveal">
+      <div class="section-header">
         <span class="section-label">What We Offer</span>
         <h2 class="section-title">Our <span class="text-accent">Services</span></h2>
         <p class="section-sub">MOT testing, repairs and car air con re-gas in Luton — everything your vehicle needs under one roof</p>
@@ -236,7 +253,9 @@
 
       <div class="services-grid">
         <div class="service-card reveal">
-          <div class="service-icon">🔍</div>
+          <span class="service-icon" aria-hidden="true">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </span>
           <h3>MOT Testing</h3>
           <p>Full Class 4 &amp; Class 7 MOT testing by qualified DVSA-approved testers. Official certificate issued on the spot.</p>
           <div class="service-price">From <strong>£29</strong></div>
@@ -244,22 +263,28 @@
         </div>
         <div class="service-card service-card--featured reveal">
           <div class="service-badge-top">Most Popular</div>
-          <div class="service-icon">⚡</div>
+          <span class="service-icon" aria-hidden="true">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </span>
           <h3>Same Day MOT</h3>
           <p>Booked in this morning? On the road by afternoon. We prioritise same-day appointments — just call ahead.</p>
           <div class="service-price">Available <strong>Daily</strong></div>
           <a href="#booking" class="service-book-btn" data-service="Same Day MOT">Book This →</a>
         </div>
         <div class="service-card reveal">
-          <div class="service-icon">🔧</div>
+          <span class="service-icon" aria-hidden="true">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+          </span>
           <h3>Quick Repairs</h3>
           <p>Failed your MOT elsewhere? We carry out advisory and failure repairs quickly so you can re-test the same day.</p>
           <div class="service-price">Free <strong>Quote</strong></div>
           <a href="#booking" class="service-book-btn" data-service="Repairs">Book This →</a>
         </div>
         <!-- #aircon anchor: Google Ads "air con regas Luton" ad group deep-links here -->
-        <div class="service-card reveal" id="aircon">
-          <div class="service-icon">❄️</div>
+        <div class="service-card service-card--aircon reveal" id="aircon">
+          <span class="service-icon" aria-hidden="true">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="22"/><line x1="4" y1="7" x2="20" y2="17"/><line x1="20" y1="7" x2="4" y2="17"/><line x1="9" y1="4" x2="12" y2="7"/><line x1="15" y1="4" x2="12" y2="7"/><line x1="9" y1="20" x2="12" y2="17"/><line x1="15" y1="20" x2="12" y2="17"/></svg>
+          </span>
           <h3>Air Con Re-gas &amp; Repair</h3>
           <p>Car AC blowing warm? Full air conditioning re-gas (R134a &amp; R1234yf), leak checks and repairs. Beat the heat.</p>
           <!-- TODO: confirm the Air Con re-gas price with the garage before ads go live -->
@@ -273,40 +298,52 @@
   <!-- ══════════════════════════════════════════════
        BENEFITS / WHY CHOOSE US
   ══════════════════════════════════════════════ -->
-  <section class="section section--dark" id="benefits">
+  <section class="section" id="benefits">
     <div class="container">
-      <div class="section-header reveal">
+      <div class="section-header">
         <span class="section-label">Why Us</span>
         <h2 class="section-title">Why Luton Drivers <span class="text-accent">Choose Us</span></h2>
       </div>
       <div class="benefits-grid">
-        <div class="benefit-card reveal">
-          <div class="benefit-icon">🏅</div>
+        <div class="benefit-card">
+          <span class="benefit-icon" aria-hidden="true">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+          </span>
           <h4>DVSA Approved</h4>
           <p>Fully authorised MOT testing station. Your MOT is 100% legal and official.</p>
         </div>
-        <div class="benefit-card reveal">
-          <div class="benefit-icon">⏱</div>
+        <div class="benefit-card">
+          <span class="benefit-icon" aria-hidden="true">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </span>
           <h4>30–60 Min Service</h4>
           <p>No waiting all day. Get your MOT done in your lunch break or before work.</p>
         </div>
-        <div class="benefit-card reveal">
-          <div class="benefit-icon">💷</div>
+        <div class="benefit-card">
+          <span class="benefit-icon" aria-hidden="true">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 12h.01M18 12h.01"/></svg>
+          </span>
           <h4>Affordable Prices</h4>
           <p>Transparent pricing. No hidden fees. We never charge more than the DVSA maximum.</p>
         </div>
-        <div class="benefit-card reveal">
-          <div class="benefit-icon">📍</div>
+        <div class="benefit-card">
+          <span class="benefit-icon" aria-hidden="true">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </span>
           <h4>Local &amp; Convenient</h4>
           <p>Right here in Luton on Arundel Rd. Easy parking. Serving Luton and surrounding areas.</p>
         </div>
-        <div class="benefit-card reveal">
-          <div class="benefit-icon">🤝</div>
+        <div class="benefit-card">
+          <span class="benefit-icon" aria-hidden="true">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3z"/><path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>
+          </span>
           <h4>Friendly Team</h4>
           <p>Honest, friendly mechanics who explain everything clearly. No jargon, no pressure.</p>
         </div>
-        <div class="benefit-card reveal">
-          <div class="benefit-icon">🔄</div>
+        <div class="benefit-card">
+          <span class="benefit-icon" aria-hidden="true">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+          </span>
           <h4>Free Re-test</h4>
           <p>If your car fails on a minor issue, we offer a free re-test within 10 working days.</p>
         </div>
@@ -314,22 +351,35 @@
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════════
-       TESTIMONIALS
-  ══════════════════════════════════════════════ -->
   <!-- ⚠️ COMPLIANCE TODO: The testimonials below are placeholder copy. They MUST be replaced with
        genuine customer reviews (e.g. copied verbatim from the garage's Google Business Profile, with
        permission) BEFORE Google Ads go live. Fabricated reviews are an ASA/CMA (UK consumer law) risk. -->
-  <section class="section" id="reviews">
+  <section class="section section--alt" id="reviews">
     <div class="container">
-      <div class="section-header reveal">
+      <div class="section-header">
         <span class="section-label">Real Reviews</span>
         <h2 class="section-title">What Our <span class="text-accent">Customers Say</span></h2>
-        <div class="stars-row">⭐⭐⭐⭐⭐ <span>5.0 Average Rating</span></div>
+        <div class="rating-summary">
+          <span class="rating-score">5.0</span>
+          <span class="stars-row" role="img" aria-label="Rated 5 out of 5 stars">
+            <svg class="star" aria-hidden="true"><use href="#i-star"/></svg>
+            <svg class="star" aria-hidden="true"><use href="#i-star"/></svg>
+            <svg class="star" aria-hidden="true"><use href="#i-star"/></svg>
+            <svg class="star" aria-hidden="true"><use href="#i-star"/></svg>
+            <svg class="star" aria-hidden="true"><use href="#i-star"/></svg>
+          </span>
+          <span class="rating-note">Average rating from local drivers</span>
+        </div>
       </div>
       <div class="reviews-grid">
-        <div class="review-card reveal">
-          <div class="review-stars">⭐⭐⭐⭐⭐</div>
+        <div class="review-card">
+          <span class="stars-row" role="img" aria-label="Rated 5 out of 5 stars">
+            <svg class="star" aria-hidden="true"><use href="#i-star"/></svg>
+            <svg class="star" aria-hidden="true"><use href="#i-star"/></svg>
+            <svg class="star" aria-hidden="true"><use href="#i-star"/></svg>
+            <svg class="star" aria-hidden="true"><use href="#i-star"/></svg>
+            <svg class="star" aria-hidden="true"><use href="#i-star"/></svg>
+          </span>
           <p class="review-text">"Booked online, showed up the next morning and was done in 45 minutes. Passed first time. Super friendly staff. Highly recommend!"</p>
           <div class="reviewer">
             <div class="reviewer-avatar">A</div>
@@ -339,8 +389,14 @@
             </div>
           </div>
         </div>
-        <div class="review-card reveal">
-          <div class="review-stars">⭐⭐⭐⭐⭐</div>
+        <div class="review-card">
+          <span class="stars-row" role="img" aria-label="Rated 5 out of 5 stars">
+            <svg class="star" aria-hidden="true"><use href="#i-star"/></svg>
+            <svg class="star" aria-hidden="true"><use href="#i-star"/></svg>
+            <svg class="star" aria-hidden="true"><use href="#i-star"/></svg>
+            <svg class="star" aria-hidden="true"><use href="#i-star"/></svg>
+            <svg class="star" aria-hidden="true"><use href="#i-star"/></svg>
+          </span>
           <p class="review-text">"Needed a same-day MOT after mine expired. They fit me in within hours. Honest about what needed fixing — no upselling. Great service."</p>
           <div class="reviewer">
             <div class="reviewer-avatar">S</div>
@@ -350,8 +406,14 @@
             </div>
           </div>
         </div>
-        <div class="review-card reveal">
-          <div class="review-stars">⭐⭐⭐⭐⭐</div>
+        <div class="review-card">
+          <span class="stars-row" role="img" aria-label="Rated 5 out of 5 stars">
+            <svg class="star" aria-hidden="true"><use href="#i-star"/></svg>
+            <svg class="star" aria-hidden="true"><use href="#i-star"/></svg>
+            <svg class="star" aria-hidden="true"><use href="#i-star"/></svg>
+            <svg class="star" aria-hidden="true"><use href="#i-star"/></svg>
+            <svg class="star" aria-hidden="true"><use href="#i-star"/></svg>
+          </span>
           <p class="review-text">"Failed my MOT at another garage and came here. They fixed it cheaply and re-tested the same day. This is now my go-to garage!"</p>
           <div class="reviewer">
             <div class="reviewer-avatar">J</div>
@@ -368,18 +430,21 @@
   <!-- ══════════════════════════════════════════════
        BOOKING FORM
   ══════════════════════════════════════════════ -->
-  <section class="section section--dark booking-section" id="booking">
+  <section class="section booking-section" id="booking">
     <div class="container">
       <div class="booking-wrapper">
-        <div class="booking-info reveal">
+        <div class="booking-info">
           <span class="section-label">Ready to Book?</span>
           <h2 class="section-title">Book Your <span class="text-accent">MOT Today</span></h2>
           <p>Fill in the form and we'll confirm your slot within the hour. Or just call us directly — we're always happy to help.</p>
-          <a href="tel:07570793698" class="btn-call booking-call-btn">📞 07570 793698</a>
+          <a href="tel:07570793698" class="btn-call booking-call-btn">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            07570 793698
+          </a>
           <div class="booking-address">
-            <span>📍</span>
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
             <div>
-              <strong>Luton MOT Centre</strong><br/>
+              <strong>Luton MOT Centre</strong>
               Arundel Rd, Maidenhall<br/>
               Luton LU4 8DY
             </div>
@@ -392,7 +457,7 @@
           </div>
         </div>
 
-        <div class="booking-form-card reveal">
+        <div class="booking-form-card">
           <div class="urgency-mini">
             <span class="urgency-dot"></span> Limited slots today – book now to secure yours
           </div>
@@ -461,21 +526,30 @@
               <label for="notes">Additional Notes</label>
               <textarea id="notes" name="notes" placeholder="Any specific concerns or questions?" rows="3"></textarea>
             </div>
-            <button type="submit" class="btn-primary btn-full pulse-btn" id="submit-btn">
-              📅 Book My MOT Now
+            <button type="submit" class="btn-primary btn-full" id="submit-btn">
+              Book My MOT Now
             </button>
             <div class="form-fatal" id="formFatal" role="alert" hidden>
-              ⚠️ Something went wrong — please call <a href="tel:07570793698"><strong>07570 793698</strong></a> and we'll book you in right away.
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              <span>Something went wrong — please call <a href="tel:07570793698"><strong>07570 793698</strong></a> and we'll book you in right away.</span>
             </div>
             <p class="form-note">We'll confirm your booking within 1 hour by phone.</p>
-            <p class="form-note form-note--privacy">🔒 We only use your details to confirm your booking. <a href="#privacy">Privacy Policy</a></p>
+            <p class="form-note form-note--privacy">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              We only use your details to confirm your booking. <a href="#privacy">Privacy Policy</a>
+            </p>
           </form>
           <!-- Success message -->
           <div class="booking-success" id="bookingSuccess">
-            <div class="success-icon">✅</div>
+            <div class="success-icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
             <h3>Booking Request Sent!</h3>
             <p>Thank you! We'll call you within the hour to confirm your slot.</p>
-            <a href="tel:07570793698" class="btn-call" style="margin-top:1rem">📞 Call us now: 07570 793698</a>
+            <a href="tel:07570793698" class="btn-call" style="margin-top:1rem">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              Call us now: 07570 793698
+            </a>
           </div>
         </div>
       </div>
@@ -485,41 +559,48 @@
   <!-- ══════════════════════════════════════════════
        LOCATION
   ══════════════════════════════════════════════ -->
-  <section class="section" id="location">
+  <section class="section section--alt" id="location">
     <div class="container">
-      <div class="section-header reveal">
+      <div class="section-header">
         <span class="section-label">Find Us</span>
         <h2 class="section-title">We're Right <span class="text-accent">Here in Luton</span></h2>
         <p class="section-sub">Serving Luton, Dunstable, Harpenden, Leagrave and surrounding areas</p>
       </div>
       <div class="location-grid">
-        <div class="location-info reveal">
+        <div class="location-info">
           <div class="location-detail">
-            <span class="loc-icon">📍</span>
+            <span class="loc-icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </span>
             <div>
               <strong>Address</strong>
               <p>Arundel Rd, Maidenhall, Luton LU4 8DY</p>
             </div>
           </div>
           <div class="location-detail">
-            <span class="loc-icon">📞</span>
+            <span class="loc-icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </span>
             <div>
               <strong>Phone</strong>
               <p><a href="tel:07570793698">07570 793698</a></p>
             </div>
           </div>
           <div class="location-detail">
-            <span class="loc-icon">🕐</span>
+            <span class="loc-icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </span>
             <div>
               <strong>Opening Hours</strong>
               <p>Mon–Fri: 8am–6pm<br/>Sat: 8am–4pm<br/>Sun: Closed</p>
             </div>
           </div>
-          <a href="https://maps.google.com/?q=Arundel+Rd+Maidenhall+Luton+LU4+8DY" target="_blank" rel="noopener" class="btn-primary" style="margin-top:1.5rem;display:inline-flex;align-items:center;gap:0.5rem">
-            📍 Get Directions
+          <a href="https://maps.google.com/?q=Arundel+Rd+Maidenhall+Luton+LU4+8DY" target="_blank" rel="noopener" class="btn-primary" style="margin-top:1rem">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Get Directions
           </a>
         </div>
-        <div class="map-wrapper reveal">
+        <div class="map-wrapper">
           <!-- TODO: open the site once deployed and confirm the map pin sits on Arundel Rd, LU4 8DY.
                This query-based embed lets Google geocode the address (the old URL had hand-built
                placeholder coordinates). -->
@@ -527,7 +608,7 @@
             src="https://www.google.com/maps?q=Arundel%20Road%2C%20Maidenhall%2C%20Luton%20LU4%208DY%2C%20UK&output=embed"
             width="600"
             height="380"
-            style="border:0;border-radius:16px;width:100%;"
+            style="border:0;width:100%;"
             allowfullscreen=""
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
@@ -541,72 +622,72 @@
   <!-- ══════════════════════════════════════════════
        FAQ
   ══════════════════════════════════════════════ -->
-  <section class="section section--dark" id="faq">
+  <section class="section" id="faq">
     <div class="container">
-      <div class="section-header reveal">
+      <div class="section-header">
         <span class="section-label">Got Questions?</span>
         <h2 class="section-title">Frequently Asked <span class="text-accent">Questions</span></h2>
       </div>
       <div class="faq-list">
-        <div class="faq-item reveal">
+        <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
             <span>How long does an MOT take?</span>
-            <span class="faq-arrow">▼</span>
+            <span class="faq-indicator" aria-hidden="true"></span>
           </button>
           <div class="faq-answer">
             <p>A standard MOT test takes between 30 and 60 minutes. You're welcome to wait in our comfortable waiting area while your car is tested.</p>
           </div>
         </div>
-        <div class="faq-item reveal">
+        <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
             <span>Can I wait while my car is being tested?</span>
-            <span class="faq-arrow">▼</span>
+            <span class="faq-indicator" aria-hidden="true"></span>
           </button>
           <div class="faq-answer">
             <p>Yes! We have a warm, comfortable waiting area with seating. You're welcome to stay on-site while your vehicle is tested.</p>
           </div>
         </div>
-        <div class="faq-item reveal">
+        <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
             <span>What happens if my car fails its MOT?</span>
-            <span class="faq-arrow">▼</span>
+            <span class="faq-indicator" aria-hidden="true"></span>
           </button>
           <div class="faq-answer">
             <p>If your car fails, we'll give you a clear written report of what needs to be fixed. We can carry out most repairs on-site. If we do the repairs, you get a free re-test within 10 working days.</p>
           </div>
         </div>
-        <div class="faq-item reveal">
+        <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
             <span>Do I need to book in advance?</span>
-            <span class="faq-arrow">▼</span>
+            <span class="faq-indicator" aria-hidden="true"></span>
           </button>
           <div class="faq-answer">
             <p>Booking is recommended to guarantee your slot, especially for same-day appointments. Use our booking form or call us on 07570 793698 to check availability.</p>
           </div>
         </div>
-        <div class="faq-item reveal">
+        <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
             <span>How much does an MOT cost?</span>
-            <span class="faq-arrow">▼</span>
+            <span class="faq-indicator" aria-hidden="true"></span>
           </button>
           <div class="faq-answer">
             <p>Our MOT tests start from just £29 for Class 4 vehicles (cars and smaller vans). We never charge more than the DVSA maximum fee. Call us for a quote.</p>
           </div>
         </div>
         <!-- If you edit FAQ copy, also update the FAQPage JSON-LD in <head> -->
-        <div class="faq-item reveal">
+        <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
             <span>How long does an air con re-gas take?</span>
-            <span class="faq-arrow">▼</span>
+            <span class="faq-indicator" aria-hidden="true"></span>
           </button>
           <div class="faq-answer">
             <p>A full air conditioning re-gas takes approximately 45–60 minutes, including a system check for leaks. You're welcome to wait while we do it.</p>
           </div>
         </div>
-        <div class="faq-item reveal">
+        <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
             <span>Which gas does my car need?</span>
-            <span class="faq-arrow">▼</span>
+            <span class="faq-indicator" aria-hidden="true"></span>
           </button>
           <div class="faq-answer">
             <p>Cars made before 2017 typically use R134a refrigerant, while newer cars use R1234yf. We check your vehicle and always use the correct gas for your system.</p>
@@ -616,16 +697,25 @@
     </div>
   </section>
 
+  <!-- Hazard chevron: use 3 of 3 — divider before the final CTA banner -->
+  <div class="chevron-divider" aria-hidden="true"></div>
+
   <!-- ══════════════════════════════════════════════
        FINAL CTA
   ══════════════════════════════════════════════ -->
-  <section class="final-cta reveal">
+  <section class="final-cta">
     <div class="container">
-      <h2>Don't Wait — <span class="text-accent">Book Your MOT Today</span></h2>
+      <h2 class="section-title">Don't Wait — <span class="text-accent">Book Your MOT Today</span></h2>
       <p>Limited slots available. Secure your spot now before they're gone!</p>
-      <div class="hero-ctas" style="justify-content:center;margin-top:2rem">
-        <a href="#booking" class="btn-primary pulse-btn" id="final-book-btn">📅 Book MOT Now</a>
-        <a href="tel:07570793698" class="btn-call" id="final-call-btn">📞 07570 793698</a>
+      <div class="hero-ctas">
+        <a href="#booking" class="btn-primary" id="final-book-btn">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Book MOT Now
+        </a>
+        <a href="tel:07570793698" class="btn-call" id="final-call-btn">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          07570 793698
+        </a>
       </div>
     </div>
   </section>
@@ -635,11 +725,11 @@
   ══════════════════════════════════════════════ -->
   <section class="section privacy-section" id="privacy">
     <div class="container privacy-container">
-      <div class="section-header reveal">
+      <div class="section-header">
         <span class="section-label">Your Data</span>
         <h2 class="section-title">Privacy <span class="text-accent">Policy</span></h2>
       </div>
-      <div class="privacy-content reveal">
+      <div class="privacy-content">
         <p><strong>What we collect.</strong> When you use our booking form we collect your name, phone number, vehicle registration, vehicle make/model and your preferred appointment details, plus any notes you add.</p>
         <p><strong>How we use it.</strong> We use these details only to confirm and manage your booking and to contact you about your vehicle. We do not sell your details or share them with third parties for marketing.</p>
         <p><strong>Advertising cookies.</strong> This site uses Google tags to measure how our online adverts perform (for example, whether a visit from an ad led to a booking or a phone call). See Google's privacy policy for how Google processes this data.</p>
@@ -654,8 +744,12 @@
   <footer class="footer">
     <div class="container footer-inner">
       <div class="footer-brand">
-        <span class="logo-icon">⚙</span>
-        <span class="logo-text">Luton MOT <span class="logo-accent">Centre</span></span>
+        <div class="nav-logo">
+          <span class="logo-icon" aria-hidden="true">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          </span>
+          <span class="logo-text">Luton MOT <span class="logo-accent">Centre</span></span>
+        </div>
         <p>DVSA Approved MOT Centre in Luton. Fast, affordable, trusted.</p>
       </div>
       <div class="footer-links">
@@ -669,10 +763,18 @@
       </div>
       <div class="footer-contact">
         <h4>Contact Us</h4>
-        <p>📍 Arundel Rd, Maidenhall,<br/>Luton LU4 8DY</p>
-        <p>📞 <a href="tel:07570793698">07570 793698</a></p>
-        <p>🕐 Mon–Fri: 8am–6pm</p>
-        <p>🕐 Sat: 8am–4pm</p>
+        <p>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Arundel Rd, Maidenhall,<br/>Luton LU4 8DY</span>
+        </p>
+        <p>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <a href="tel:07570793698">07570 793698</a>
+        </p>
+        <p>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span>Mon–Fri: 8am–6pm<br/>Sat: 8am–4pm</span>
+        </p>
       </div>
     </div>
     <div class="footer-bottom">
@@ -684,8 +786,14 @@
        STICKY CTA BAR (Mobile)
   ══════════════════════════════════════════════ -->
   <div class="sticky-cta" id="stickyCta">
-    <a href="#booking" class="sticky-book" id="sticky-book-btn">📅 Book Now</a>
-    <a href="tel:07570793698" class="sticky-call" id="sticky-call-btn">📞 Call Now</a>
+    <a href="#booking" class="sticky-book" id="sticky-book-btn">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      Book Now
+    </a>
+    <a href="tel:07570793698" class="sticky-call" id="sticky-call-btn">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Call Now
+    </a>
   </div>
 
   <script src="script.js" defer></script>

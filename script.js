@@ -5,6 +5,9 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  // Respect prefers-reduced-motion: skip animations and show final states
+  const REDUCED_MOTION = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   // Anti-spam: minimum time-on-page before a submit is sent (bots submit instantly)
   const PAGE_LOADED_AT = Date.now();
   const MIN_TIME_ON_PAGE_MS = 3000;
@@ -47,44 +50,50 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', onScroll, { passive: true });
 
 
-  /* ══ 2. REVEAL ON SCROLL (Intersection Observer) ═ */
+  /* ══ 2. REVEAL ON SCROLL (service cards only) ════ */
   const revealEls = document.querySelectorAll('.reveal');
-  const revealObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          // Stagger sibling cards
-          const siblings = entry.target.parentElement.querySelectorAll('.reveal');
-          let delay = 0;
-          siblings.forEach((sib, idx) => { if (sib === entry.target) delay = idx * 80; });
-          setTimeout(() => {
-            entry.target.classList.add('visible');
-          }, Math.min(delay, 300));
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
-  );
-  revealEls.forEach(el => revealObserver.observe(el));
+  if (REDUCED_MOTION) {
+    revealEls.forEach(el => el.classList.add('visible'));
+  } else {
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Stagger sibling cards 60ms apart
+            const siblings = entry.target.parentElement.querySelectorAll('.reveal');
+            let delay = 0;
+            siblings.forEach((sib, idx) => { if (sib === entry.target) delay = idx * 60; });
+            setTimeout(() => {
+              entry.target.classList.add('visible');
+            }, Math.min(delay, 240));
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+    );
+    revealEls.forEach(el => revealObserver.observe(el));
+  }
 
 
   /* ══ 3. COUNTER ANIMATION ════════════════════════
      The real final value lives in the markup (no-JS fallback). JS animates 0 → data-target
      when scrolled into view; if the observer never fires, the markup value stays visible. */
   const counters = document.querySelectorAll('[data-target]');
-  const counterObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          animateCounter(entry.target);
-          counterObserver.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.5 }
-  );
-  counters.forEach(el => counterObserver.observe(el));
+  if (!REDUCED_MOTION) {
+    const counterObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            animateCounter(entry.target);
+            counterObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+    counters.forEach(el => counterObserver.observe(el));
+  }
 
   function animateCounter(el) {
     const target = parseInt(el.dataset.target, 10);
@@ -222,12 +231,10 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.dataset.originalHtml = btn.innerHTML;
       btn.disabled = true;
       btn.classList.add('loading');
-      btn.classList.remove('pulse-btn');
       btn.innerHTML = '<span class="btn-spinner" aria-hidden="true"></span> Sending…';
     } else {
       btn.disabled = false;
       btn.classList.remove('loading');
-      btn.classList.add('pulse-btn');
       if (btn.dataset.originalHtml) btn.innerHTML = btn.dataset.originalHtml;
     }
   }
@@ -284,7 +291,8 @@ document.addEventListener('DOMContentLoaded', () => {
     setSubmitting(false);
     if (fatalBanner) {
       if (serverMessage) {
-        fatalBanner.innerHTML = '⚠️ ' + escapeHtml(serverMessage) +
+        const msgSpan = fatalBanner.querySelector('span');
+        (msgSpan || fatalBanner).innerHTML = escapeHtml(serverMessage) +
           ' Or call <a href="tel:07570793698"><strong>' + PHONE_DISPLAY + '</strong></a>.';
       }
       fatalBanner.hidden = false;

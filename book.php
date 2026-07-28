@@ -1,6 +1,6 @@
 <?php
 /**
- * book.php — booking form endpoint for Luton MOT Centre
+ * book.php — booking form endpoint for AutoSave LTD (Luton MOT site)
  *
  * Accepts POST from the booking form, validates & sanitises everything server-side,
  * emails the booking to the garage via PHPMailer over Hostinger SMTP, and returns JSON.
@@ -113,7 +113,7 @@ $config = require $configFile;
 /* ── 6. Build the email (plain text — nothing user-supplied goes near headers) ── */
 $subject = sprintf('New booking: %s — %s (%s)', $service, $name, $reg);
 
-$body = "NEW BOOKING REQUEST — Luton MOT Centre\n"
+$body = "NEW BOOKING REQUEST — AutoSave LTD\n"
       . "══════════════════════════════════════\n\n"
       . "Service:        {$service}\n"
       . "Name:           {$name}\n"
@@ -150,7 +150,7 @@ try {
     $mail->CharSet    = 'UTF-8';
     $mail->Timeout    = 10;
 
-    $mail->setFrom($config['from_email'], 'Luton MOT Centre Website');
+    $mail->setFrom($config['from_email'], 'AutoSave LTD Website');
     $mail->addAddress($config['to_email']);
     // Reply-to is NOT set to user input on purpose: the customer gave a phone
     // number, not an email, and user data must stay out of the headers.
